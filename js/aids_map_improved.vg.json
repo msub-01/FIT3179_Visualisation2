@@ -1,0 +1,170 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "Global HIV-AIDS Death Rate (1990-2019)"},
+    "width": 1050,
+    "height": 500,
+    "projection": {"type": "equalEarth"},
+    "params": [
+      {
+        "name": "Year_Selection",
+        "value": 2019,
+        "bind": {
+          "input": "range",
+          "min": 1990,
+          "max": 2019,
+          "step": 1,
+          "name": "Year: "
+        }
+      }
+    ],
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+          "format": {"type": "topojson", "feature": "oceans"}
+        },
+        "mark": {"type": "geoshape", "fill": "skyblue"}
+      },
+      {
+        "data": {
+          "url": "js/ne_50m_graticules_30.json",
+          "format": {"type": "topojson", "feature": "ne_50m_graticules_30"}
+        },
+        "mark": {"type": "geoshape", "fill": null, "stroke":"white"}
+      },
+      {
+        "data": {
+          "url": "js/ne_110m_admin_0_countries.topojson",
+          "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+        },
+        "transform": [
+          {
+            "calculate": "'Data is not available in ' + datum.properties.NAME",
+            "as": "not_available"
+          }
+        ],
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "encoding": {"tooltip": {"field": "not_available"}}
+      },
+      {
+        "data": {
+          "url": "data/death_rate_slider.csv",
+          "format": {"type": "csv"}
+        },
+        "transform": [
+          {
+            "lookup": "Country",
+            "from": {
+              "data": {
+                "url": "js/ne_110m_admin_0_countries.topojson",
+                "format": {
+                  "type": "topojson",
+                  "feature": "ne_110m_admin_0_countries"
+                }
+              },
+              "key": "properties.NAME"
+            },
+            "as": "geo"
+          },
+          {"filter": "datum.Year == Year_Selection"}
+        ],
+        "layer": [
+          {
+            "params": [
+              {
+                "name": "highlight",
+                "select": {
+                  "type": "point",
+                  "encodings": ["shape"],
+                  "on": "mouseover",
+                  "clear": "mouseout"
+                }
+              }
+            ],
+            "mark": {"type": "geoshape", "stroke": "white"},
+            "encoding": {
+              "shape": {"field": "geo", "type": "geojson"},
+              "color": {
+                "field": "Death_rate",
+                "type": "quantitative",
+                "scale": {
+                    "type": "threshold",
+                    "domain": [1, 10, 50, 100, 500],
+                    "range": [ "#fdd0a2","#fdbe85","#f2581f", "#e32d14", "#ad0c07", "#260201"]
+                  },
+                "legend": {"titleFontSize": 15, "labelFontSize": 12},
+                "title": "Deaths per 100,000 people"
+              },
+              "tooltip": [
+                {"field": "Country", "type": "nominal", "title": "Country"},
+                {"field": "Death_rate", "type": "quantitative", "title": "Deaths per 100,000 people"}
+                
+              ],
+              "stroke": {
+                "condition": {
+                  "param": "highlight",
+                  "empty": false,
+                  "value": "white"
+                }
+              },
+              "strokeWidth": {
+                "condition": {"param": "highlight", "empty": false, "value": 1.5},
+                "value": 1.5
+              }
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "baseline": "middle",
+              "dx": 325,
+              "dy": 100,
+              "fontSize": 10
+            },
+            "encoding": {
+              "text": {"value": "Oceanina has consistently had low death rates"},
+              "color": {"value": "black"}
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "baseline": "middle",
+              "dx": 0,
+              "dy": -240,
+              "fontSize": 10
+            },
+            "encoding": {"text": {"value": "Europe has mostly maintained low death rates due to good public healthcare"}, "color": {"value": "black"}}
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "baseline": "middle",
+              "dx": -10,
+              "dy": 140,
+              "fontSize": 10
+            },
+            "encoding": {"text": {"value": "Africa is disproportionately affected due to regional poverty"}, "color": {"value": "black"}}
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "baseline": "middle",
+              "dx": -350,
+              "dy": -150,
+              "fontSize": 10
+            },
+            "encoding": {
+              "text": {"value": "North America had a surge until 1996 before handling the epidemic"},
+              "color": {"value": "black"}
+            }
+          }
+
+        ]
+      }
+    ]
+  }

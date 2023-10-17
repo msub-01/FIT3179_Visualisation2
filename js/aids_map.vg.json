@@ -1,0 +1,58 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Global HIV-AIDS Death Rate (2019)",
+  "width": 800,
+  "height": 500,
+  "data": {
+    "url": "js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "#c6dbef"}
+    },
+    {
+      "transform": [
+        {
+          "calculate": "'Data is not available in ' + datum.properties.NAME",
+          "as": "note"
+        }
+      ],
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {"tooltip": {"field": "note"}}
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "data/death_rate_2019.csv"
+            },
+            "key": "Country",
+            "fields": ["Death_rate"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "white"},
+      "encoding": {
+        "color": {
+          "field": "Death_rate",
+          "type": "quantitative",
+          "title": "Deaths per 100,000 people",
+          "scale": {
+            "type": "threshold",
+            "domain": [1, 10, 50, 100, 500],
+            "range": [ "#fdd0a2","#fdbe85","#f2581f", "#e32d14", "#ad0c07", "#260201"]
+          }
+        },
+        "tooltip": [
+          {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+          {"field": "Death_rate", "type": "quantitative", "title": "Deaths per 100,000 people"}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}

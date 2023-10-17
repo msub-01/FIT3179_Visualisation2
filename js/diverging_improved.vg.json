@@ -1,0 +1,123 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "values": [
+          {"Year": "2000", "gender": 1, "Deaths": 7.9},
+          {"Year": 2000, "gender": 2, "Deaths": 2.5},
+          {"Year": 2001, "gender": 1, "Deaths": 7.5},
+          {"Year": 2001, "gender": 2, "Deaths": 2.5},
+          {"Year": 2002, "gender": 1, "Deaths": 7.4},
+          {"Year": 2002, "gender": 2, "Deaths": 2.5},
+          {"Year": 2003, "gender": 1, "Deaths": 7.1},
+          {"Year": 2003, "gender": 2, "Deaths": 2.4},
+          {"Year": 2004, "gender": 1, "Deaths": 6.6},
+          {"Year": 2004, "gender": 2, "Deaths":2.4},
+          {"Year": 2005, "gender": 1, "Deaths": 6.2},
+          {"Year": 2005, "gender": 2, "Deaths": 2.3},
+          {"Year": 2006, "gender": 1, "Deaths": 5.9},
+          {"Year": 2006, "gender": 2, "Deaths": 2.2},
+          {"Year": 2007, "gender": 1, "Deaths": 5.4},
+          {"Year": 2007, "gender": 2, "Deaths": 2.1},
+          {"Year": 2008, "gender": 1, "Deaths": 4.8},
+          {"Year": 2008, "gender": 2, "Deaths": 1.9},
+          {"Year": 2009, "gender": 1, "Deaths": 4.4},
+          {"Year": 2009, "gender": 2, "Deaths": 1.7},
+          {"Year": 2010, "gender": 1, "Deaths": 3.8},
+          {"Year": 2010, "gender": 2, "Deaths": 1.4},
+          {"Year": 2011, "gender": 1, "Deaths": 3.4},
+          {"Year": 2011, "gender": 2, "Deaths": 1.3},
+          {"Year": 2012, "gender": 1, "Deaths": 3.2},
+          {"Year": 2012, "gender": 2, "Deaths": 1.2},
+          {"Year": 2013, "gender": 1, "Deaths": 3.1},
+          {"Year": 2013, "gender": 2, "Deaths": 1.1},
+          {"Year": 2014, "gender": 1, "Deaths":3},
+          {"Year": 2014, "gender": 2, "Deaths": 1.1},
+          {"Year": 2015, "gender": 1, "Deaths": 2.8},
+          {"Year": 2015, "gender": 2, "Deaths": 1},
+          {"Year": 2016, "gender": 1, "Deaths": 2.7},
+           {"Year": 2016, "gender": 2, "Deaths": 0.9},
+          {"Year": 2017, "gender": 1, "Deaths": 2.4},
+          {"Year": 2017, "gender": 2, "Deaths": 0.8},
+          {"Year": 2018, "gender": 1, "Deaths": 2.3},
+          {"Year": 2018, "gender": 2, "Deaths": 0.8},
+          {"Year": 2019, "gender": 1, "Deaths": 2.1},
+          {"Year": 2019, "gender": 2, "Deaths": 0.7}
+        ]
+      },
+    "title": "HIV-AIDS related deaths by gender in the US (2000 to 2019)",
+    "transform": [
+        {"calculate": "datum.gender == 2 ? 'Female' : 'Male'", "as": "gender"}
+      ],
+      "spacing": 0,
+      "hconcat": [{
+        "transform": [{
+          "filter": {"field": "gender", "equal": "Female"}
+        }],
+        "title": "Female",
+        "width": 500,
+        "mark": "bar",
+        "encoding": {
+          "y": {
+            "field": "Year", "axis": null, "sort": "descending"
+          },
+          "x": {
+            "aggregate": "sum", "field": "Deaths",
+            "title": "Deaths per 100,000 resident population",
+            "axis": {"format": "s"},
+            "sort": "descending"
+          },
+          "color": {
+            "field": "gender",
+            "scale": {"range": ["#a847a5", "#1689ba"]},
+            "legend": null
+          },
+        "tooltip": [
+          {"field": "Year", "type": "nominal", "title": "Year"},
+          {"field": "gender", "type": "nominal", "title": "Gender"},
+          {"field": "Deaths", "type": "quantitative", "title": "Deaths per 100,000 resident population"}]
+        }
+      }, {
+        "width": 0,
+        "view": {"stroke": null},
+        "mark": {
+          "type": "text",
+          "align": "center"
+        },
+        "encoding": {
+          "y": {"field": "Year", "type": "ordinal", "axis": null, "sort": "descending"},
+          "text": {"field": "Year", "type": "quantitative"}
+        }
+      }, {
+        "transform": [{
+          "filter": {"field": "gender", "equal": "Male"}
+        }],
+        "title": "Male",
+        "width": 500,
+        "mark": "bar",
+        "encoding": {
+          "y": {
+            "field": "Year", "title": null,
+            "axis": null, "sort": "descending"
+          },
+          "x": {
+            "aggregate": "sum", "field": "Deaths",
+            "title": "Deaths per 100,000 resident population",
+            "axis": {"format": "s"}
+          },
+          "color": {
+            "field": "gender",
+            "legend": null
+          },
+        "tooltip": [
+          {"field": "Year", "type": "nominal", "title": "Year"},
+          {"field": "gender", "type": "nominal", "title": "Gender"},
+          {"field": "Deaths", "type": "quantitative", "title": "Deaths per 100,000 resident population"}
+        ]
+        }
+      }],
+      "config": {
+        "view": {"stroke": null},
+        "axis": {"grid": false}
+      }
+    }
+   

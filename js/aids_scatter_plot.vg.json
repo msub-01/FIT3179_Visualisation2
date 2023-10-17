@@ -1,0 +1,144 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1050,
+    "height":400,
+    "title": "New HIV-AIDS Cases per 1000 People per Country (2019)",
+    "data": {
+      "url": "data/aids_cases_2019.csv"
+    },
+    "transform": [
+      {"filter": "datum.UN_AIDS > 0"}, 
+      {"filter": "datum.IMHE> 0"},
+      {"filter": "Region_selection == null || datum.region == Region_selection"},
+      {"filter": "datum.Population > Population_Above"}
+    ],
+    "params":[
+      {
+      "name": "Region_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "South Asia",
+          "Europe & Central Asia",
+          "Middle East & North Africa",
+          "Sub-Saharan Africa",
+          "Latin America & Caribbean",
+          "East Asia & Pacific",
+          "North America"
+        ],
+        "labels":[
+            "Show All",
+            "South Asia",
+            "Europe & Central Asia",
+            "Middle East & North Africa",
+            "Sub-Saharan Africa",
+            "Latin America & Caribbean",
+            "East Asia & Pacific",
+            "North America"
+        ],
+        "name": "Region Selection: "
+      }
+    },
+    {
+      "name": "Population_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 100000000,
+        "step": 1000000,
+        "name": "Minimum Population: "
+    } }
+    
+    ],
+    "encoding": {
+      "x": {
+        "field": "IMHE",
+        "type": "quantitative",
+        "title": "IMHE Estimates",
+        "axis": {"tickCount": 5},
+        "scale": {"type": "log", "domain": [0.001, 100]}
+  }, 
+    "y": {
+        "field": "UN_AIDS",
+        "type": "quantitative",
+        "title": "UN AIDS Estimates",
+        "axis": {"tickCount": 5},
+        "scale": {"type": "log", "domain": [0.001, 100]}
+      }
+    },
+    "layer": [
+      {
+        "mark":"circle",
+        "encoding": {
+           "color": {
+              "field": "region",
+              "type": "nominal",
+              "title": "Region",
+              "scale": {
+              "domain": [
+                "South Asia",
+                "Europe & Central Asia",
+                "Middle East & North Africa",
+                "Sub-Saharan Africa",
+                "Latin America & Caribbean",
+                "East Asia & Pacific",
+                "North America"
+              ], 
+              "range": [
+                "#e41a1c",
+                "#984ea3",
+                "#ff7f00",
+                "#a6cee3",
+                "#377eb8",
+                "#a65628",
+                "#6f535b"
+
+             ] 
+            }
+    },
+    "opacity": { "value": 0.6 }, 
+    "size": {
+        "field": "Population",
+         "type": "quantitative",
+         "scale": {
+          "type": "threshold",
+          "domain": [1000000, 10000000, 100000000],
+          "range": [10, 50, 400, 600]
+      },
+      "legend": {"format": ".1s"}
+    }, 
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "IMHE", "type": "quantitative", "format": ",", "title":"IMHE Estimate"},
+      {"field": "UN_AIDS", "type": "quantitative", "format": ",", "title":"UN AIDS Estimate"},
+      {"field": "Population", "type": "quantitative"}
+     ]
+  }
+  },
+  {
+    "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country'] =='Botswana'|| datum['Country'] =='Eswatini'|| datum['Country'] =='Suriname'|| datum['Country'] =='Sao Tome and Principe'",
+"value": 1 },
+"value": 0 },
+        "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "IMHE", "type": "quantitative", "format": ",", "title":"IMHE Estimate"},
+            {"field": "UN_AIDS", "type": "quantitative", "format": ",", "title":"UN AIDS Estimate"},
+            {"field": "Population", "type": "quantitative"} ]
+} }
+],
+"config": {}}

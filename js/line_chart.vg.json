@@ -1,0 +1,113 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "data/cases_deaths_2019.csv"
+    },
+    "title": "Global Prevalence, New cases and Deaths from HIV-AIDS (1990 to 2019)",
+    "width": 1000,
+    "height": 300,
+    "layer": [
+      {
+        "mark": "rect",
+        "data": {
+          "values": [
+            {
+              "start": "2004",
+              "end": "2006",
+              "event": "Nazi Rule"
+            },
+            {
+              "start": "2008",
+              "end": "2010",
+              "event": "GDR (East Germany)"
+            }
+          ]
+        },
+        "encoding": {
+          "x": {
+            "field": "start",
+            "timeUnit": "year"
+          },
+          "x2": {
+            "field": "end",
+            "timeUnit": "year"
+          },
+          "color": {"field": "event", "type": "nominal"}
+        }
+      },
+      {
+        "encoding": {
+          "x": {"field": "Year", "type": "temporal"},
+          "y": {"field": "Count", "type": "quantitative"},
+          "color": {
+            "field": "Measure", "type": "nominal", "title": "Measure",
+            "scale": {
+                "domain": ["Current number of cases", "Deaths", "New number of cases"], 
+                "range": ["#0c43cf", "#8c0e25","#ed4edb"]}
+              }
+        },
+        "layer": [
+          
+          {"mark": "line"},
+          {
+            "params": [{
+              "name": "label",
+              "select": {
+                "type": "point",
+                "encodings": ["x"],
+                "nearest": true,
+                "on": "mouseover"
+              }
+            }],
+            "mark": "point",
+            "encoding": {
+              "opacity": {
+                "condition": {
+                  "param": "label",
+                  "empty": false,
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "transform": [{"filter": {"param": "label", "empty": false}}],
+        "layer": [
+          {
+            "mark": {"type": "rule", "color": "gray"},
+            "encoding": {
+              "x": {"type": "temporal", "field": "date", "aggregate": "min"}
+            }
+          },
+          {
+            "encoding": {
+              "text": {"type": "quantitative", "field": "Count"},
+              "x": {"type": "temporal", "field": "Year", "title": "Year"},
+              "y": {"type": "quantitative", "field": "Count"}
+            },
+            "layer": [
+              {
+                "mark": {
+                  "type": "text",
+                  "stroke": "white",
+                  "strokeWidth": 2,
+                  "align": "left",
+                  "dx": 5,
+                  "dy": -5
+                }
+              },
+              {
+                "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5},
+                "encoding": {
+                  "color": {"type": "nominal", "field": "Measure"}
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

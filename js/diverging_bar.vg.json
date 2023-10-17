@@ -1,0 +1,78 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A population pyramid for the US in 2000, created using stack. See https://vega.github.io/vega-lite/examples/concat_population_pyramid.html for a variant of this created using concat.",
+    "data": {
+        "values": [
+          {"Year": "2000", "gender": "Male", "Deaths": 7.9},
+          {"Year": "2000", "gender": "Female", "Deaths": -2.5},
+          {"Year": "2001", "gender": "Male", "Deaths": 7.5},
+          {"Year": "2001", "gender": "Female", "Deaths": -2.5},
+          {"Year": "2002", "gender": "Male", "Deaths": 7.4},
+          {"Year": "2002", "gender": "Female", "Deaths": -2.5},
+          {"Year": "2003", "gender": "Male", "Deaths": 7.1},
+          {"Year": "2003", "gender": "Female", "Deaths": -2.4},
+          {"Year": "2004", "gender": "Male", "Deaths": 6.6},
+          {"Year": "2004", "gender": "Female", "Deaths":-2.4},
+          {"Year": "2005", "gender": "Male", "Deaths": 6.2},
+          {"Year": "2005", "gender": "Female", "Deaths": -2.3},
+          {"Year": "2006", "gender": "Male", "Deaths": 5.9},
+          {"Year": "2006", "gender": "Female", "Deaths": -2.2},
+          {"Year": "2007", "gender": "Male", "Deaths": 5.4},
+          {"Year": "2007", "gender": "Female", "Deaths": -2.1},
+          {"Year": "2008", "gender": "Male", "Deaths": 4.8},
+          {"Year": "2008", "gender": "Female", "Deaths": -1.9},
+          {"Year": "2009", "gender": "Male", "Deaths": 4.4},
+          {"Year": "2009", "gender": "Female", "Deaths": -1.7},
+          {"Year": "2010", "gender": "Male", "Deaths": 3.8},
+          {"Year": "2010", "gender": "Female", "Deaths": -1.4},
+          {"Year": "2011", "gender": "Male", "Deaths": 3.4},
+          {"Year": "2011", "gender": "Female", "Deaths": -1.3},
+          {"Year": "2012", "gender": "Male", "Deaths": 3.2},
+          {"Year": "2012", "gender": "Female", "Deaths": -1.2},
+          {"Year": "2013", "gender": "Male", "Deaths": 3.1},
+          {"Year": "2013", "gender": "Female", "Deaths": -1.1},
+          {"Year": "2014", "gender": "Male", "Deaths":3},
+          {"Year": "2014", "gender": "Female", "Deaths": -1.1},
+          {"Year": "2015", "gender": "Male", "Deaths": 2.8},
+          {"Year": "2015", "gender": "Female", "Deaths": -1},
+          {"Year": "2016", "gender": "Male", "Deaths": 2.7},
+           {"Year": "2016", "gender": "Female", "Deaths": -0.9},
+          {"Year": "2017", "gender": "Male", "Deaths": 2.4},
+          {"Year": "2017", "gender": "Female", "Deaths": -0.8},
+          {"Year": "2018", "gender": "Male", "Deaths": 2.3},
+          {"Year": "2018", "gender": "Female", "Deaths": -0.8},
+          {"Year": "2019", "gender": "Male", "Deaths": 2.1},
+          {"Year": "2019", "gender": "Female", "Deaths": -0.7}
+        ]
+      },
+      "title": "HIV/AIDS related deaths by gender in the US (2019)",
+    "width": 500,
+    "height": 300,
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Year",
+        "axis": null, "sort": "descending"
+      },
+      "x": {
+        "aggregate": "sum", "field": "Deaths",
+        "title": "Deaths per 100,000 resident population",
+        "axis": {"format": "s"}
+      },
+      "color": {
+        "field": "gender",
+        "scale": {"range": ["#6e6c69", "#ca8861"]},
+        "legend": {"orient": "top", "title": null}
+      },
+        "tooltip": [
+          {"field": "Year", "type": "nominal", "title": "Year"},
+          {"field": "gender", "type": "nominal", "title": "Gender"},
+          {"field": "Deaths", "type": "quantitative", "title": "Deaths per 100,000 resident population"}
+        ]
+    },
+    "config": {
+      "view": {"stroke": null},
+      "axis": {"grid": false}
+    }
+  }
+  

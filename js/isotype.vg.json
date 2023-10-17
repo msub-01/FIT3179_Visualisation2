@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "config": {"view": {"stroke": ""}},
+    "width": 600,
+    "height": 500,
+    "data": {
+      "values": [
+        {"Ethnicity": "African American", "Percentage_with_HIV": 40.3},
+        {"Ethnicity": "African American", "Percentage_with_HIV": 40.3},
+        {"Ethnicity": "African American", "Percentage_with_HIV": 40.3},
+        {"Ethnicity": "African American", "Percentage_with_HIV": 40.3},
+        {"Ethnicity": "White", "Percentage_with_HIV": 28.5},
+        {"Ethnicity": "White", "Percentage_with_HIV": 28.5},
+        {"Ethnicity": "White", "Percentage_with_HIV": 28.5},
+        {"Ethnicity": "Hispanic", "Percentage_with_HIV": 24.7},
+        {"Ethnicity": "Hispanic", "Percentage_with_HIV": 24.7},
+        {"Ethnicity": "Asian", "Percentage_with_HIV": 1.5},
+        {"Ethnicity": "American Indian", "Percentage_with_HIV": 0.3},
+        {"Ethnicity": "Native Hawaiian and Other", "Percentage_with_HIV": 0.09}
+      ]
+    },
+    "title": "HIV-AIDS related deaths by ethnicity in the US (2019)",
+    "transform": [
+      {
+        "calculate": "{'African American': '​🧑🏾‍🦱', 'White': '🧑🏻‍🦰', 'Hispanic': '👩🏻‍🦱​', 'Asian': ' ​👩🏻', 'American Indian': '👨🏽‍🦱', 'Native Hawaiian and Other': '​​👩🏽‍🦱​​'}[datum.Ethnicity]",
+        "as": "emoji"
+      },
+      {"window": [{"op": "rank", "as": "rank"}], "groupby": ["Ethnicity"]}
+    ],
+    "mark": {"type": "text", "baseline": "middle"},
+    "encoding": {
+      "x": {"field": "rank", "type": "ordinal", "title": "Percentage of HIV deaths/10", "axis": {
+        "labelAngle": 0}},
+      "y": {"field": "Ethnicity", "type": "nominal"},
+      "text": {"field": "emoji", "type": "nominal"},
+      "size": {"value": 50},
+      "tooltip": [
+        {"field": "Ethnicity", "type": "nominal", "title": "Ethnicity"},
+        {"field": "Percentage_with_HIV", "type": "quantitative", "title": "Percentage of HIV deaths"}
+      ]
+    }
+  }
+ 

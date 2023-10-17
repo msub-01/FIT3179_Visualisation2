@@ -1,0 +1,44 @@
+{
+
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Global HIV-AIDS Deaths by age (1990 to 2019)",
+    "data": {
+        "url": "data/deaths_by_age_2019.csv"
+    },
+    "width": 400,
+    "height":400,
+    "mark": "area",
+    "params": [{
+      "name": "Age group",
+      "select": {"type": "point", "fields": ["Age_group"]},
+      "bind": "legend"
+    }],
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "timeUnit": "year",
+            "axis": {"title": "Year", "tickCount": 10, "grid": false}
+        },
+        "y": {
+          "title": "Death Count", "aggregate": "sum", "field": "Count"
+        },
+        "color": {
+        "field": "Age_group",
+         "scale": {"scheme": "category20b"}
+        },
+        "opacity": {
+          "condition": {"param": "Age group", "value": 1},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal", "title": "Year"},
+          {"field": "over_70", "type": "nominal", "title": "Over 70 years"},
+          {"field": "50_69", "type": "nominal", "title": "50 to 69 years"},
+          {"field": "15_49", "type": "nominal", "title": "15 to 49 years"},
+          {"field": "5_14", "type": "nominal", "title": "5 to 14 years"},
+          {"field": "under_5", "type": "nominal", "title": "Under 5 years"}
+        ]
+  },
+  "config": {}
+  
+}
