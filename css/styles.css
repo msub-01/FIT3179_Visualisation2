@@ -1,0 +1,113 @@
+body *{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-family: "Oswald";
+    font-weight: 900;
+    font-size: 80px;
+    text-align: left;
+    color: #d13141;
+    padding-bottom: 50px;
+}
+
+body {
+    background-color: white;
+}
+
+.page {
+    width: 1500px;
+    background-color:  white;
+    margin: auto;
+    padding: 20px;
+    padding-top: 35px;
+}
+
+.vis-container {
+    width: 100%;
+    padding: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.description h2,
+h1 {
+    margin-top: 0px;
+}
+
+.description-right {
+    padding-left: 20px;
+}
+
+.description-left {
+    padding-right: 20px;
+}
+
+.pure-g {
+    margin-bottom: 40px;
+}
+
+.small-font {
+    font-size: 14px;
+}
+
+.cases_text {
+    color: #f55d05;
+    font-family: "Oswald";
+}
+
+.age_text {
+    color: #71706f;
+    font-family: "Oswald";
+}
+
+.deaths_text {
+    color: #820909;
+    font-family: "Oswald";
+}
+
+.aids_text {
+    color: #d13141;
+    font-family: "Oswald";
+}
+
+.male_text {
+    color: #1689ba;
+    font-family: "Oswald";
+}
+
+.new_text {
+    color: #ed4edb;
+    font-family: "Oswald";
+}
+
+.current_text {
+    color: #0c43cf;
+    font-family: "Oswald";
+}
+
+h3 {
+    font-family: "Oswald";
+    font-weight: 400;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: "Oswald";
+    font-weight: 400;
+    font-size: 50px;
+    font-weight: 900;
+    text-align: left;
+    color: #d13141;
+    padding-bottom: 50px;
+}
+
+h6 {
+    font-family: "Oswald";
+}
+
+p {
+    font-family: "Oswald";
+    font-weight: 20;
+    font-size: 20px;
+}
