@@ -1,0 +1,229 @@
+"","Country","Code","Year","Death_rate"
+"30","Afghanistan","AFG",2019,0.96
+"60","African Region (WHO)","",2019,76.15
+"90","Albania","ALB",2019,0.06
+"120","Algeria","DZA",2019,0.62
+"150","American Samoa","ASM",2019,0.93
+"180","Andorra","AND",2019,2.59
+"210","Angola","AGO",2019,77.73
+"240","Antigua and Barbuda","ATG",2019,7.09
+"270","Argentina","ARG",2019,3.68
+"300","Armenia","ARM",2019,0.56
+"330","Australia","AUS",2019,0.24
+"360","Austria","AUT",2019,0.34
+"390","Azerbaijan","AZE",2019,0.31
+"420","Bahamas","BHS",2019,26.56
+"450","Bahrain","BHR",2019,0.38
+"480","Bangladesh","BGD",2019,0.23
+"510","Barbados","BRB",2019,7.1
+"540","Belarus","BLR",2019,2.69
+"570","Belgium","BEL",2019,0.41
+"600","Belize","BLZ",2019,20.18
+"630","Benin","BEN",2019,22.78
+"660","Bermuda","BMU",2019,7.53
+"690","Bhutan","BTN",2019,4
+"720","Bolivia","BOL",2019,6.1
+"750","Bosnia and Herz","BIH",2019,0.04
+"780","Botswana","BWA",2019,258.09
+"810","Brazil","BRA",2019,6.39
+"840","Brunei","BRN",2019,1.14
+"870","Bulgaria","BGR",2019,0.57
+"900","Burkina Faso","BFA",2019,18.11
+"930","Burundi","BDI",2019,23.9
+"960","Cambodia","KHM",2019,9.07
+"990","Cameroon","CMR",2019,109.67
+"1020","Canada","CAN",2019,0.58
+"1050","Cape Verde","CPV",2019,10.11
+"1080","Central African Rep.","CAF",2019,141.84
+"1110","Chad","TCD",2019,46.21
+"1140","Chile","CHL",2019,2.35
+"1170","China","CHN",2019,1.74
+"1200","Colombia","COL",2019,4.78
+"1230","Comoros","COM",2019,0.28
+"1260","Congo","COG",2019,91.42
+"1290","Cook Islands","COK",2019,8.88
+"1320","Costa Rica","CRI",2019,2.82
+"1350","Côte d'Ivoire","CIV",2019,67.64
+"1380","Croatia","HRV",2019,0.15
+"1410","Cuba","CUB",2019,2.57
+"1440","Cyprus","CYP",2019,0.27
+"1470","Czechia","CZE",2019,0.15
+"1500","Dem. Rep. Congo","COD",2019,15.46
+"1530","Denmark","DNK",2019,0.34
+"1560","Djibouti","DJI",2019,81.48
+"1590","Dominica","DMA",2019,6.89
+"1620","Dominican Republic","DOM",2019,12.65
+"1650","East Asia & Pacific (WB)","",2019,2.93
+"1680","East Timor","TLS",2019,21.15
+"1710","Eastern Mediterranean Region (WHO)","",2019,2.45
+"1740","Ecuador","ECU",2019,6.91
+"1770","Egypt","EGY",2019,0.06
+"1800","El Salvador","SLV",2019,11.36
+"1830","England","",2019,0.29
+"1860","Equatorial Guinea","GNQ",2019,204.35
+"1890","Eritrea","ERI",2019,27.04
+"1920","Estonia","EST",2019,2.56
+"1950","Eswatini","SWZ",2019,353.13
+"1980","Ethiopia","ETH",2019,33.56
+"2010","Europe & Central Asia (WB)","",2019,3.13
+"2040","European Region (WHO)","",2019,3.09
+"2070","Fiji","FJI",2019,0.95
+"2100","Finland","FIN",2019,0.08
+"2130","France","FRA",2019,0.57
+"2160","G20","",2019,5.19
+"2190","Gabon","GAB",2019,72.44
+"2220","Gambia","GMB",2019,67.57
+"2250","Georgia","GEO",2019,0.58
+"2280","Germany","DEU",2019,0.39
+"2310","Ghana","GHA",2019,55.64
+"2340","Greece","GRC",2019,0.2
+"2370","Greenland","GRL",2019,2.52
+"2400","Grenada","GRD",2019,4.83
+"2430","Guam","GUM",2019,4.07
+"2460","Guatemala","GTM",2019,4.16
+"2490","Guinea","GIN",2019,45.81
+"2520","Guinea-Bissau","GNB",2019,73.58
+"2550","Guyana","GUY",2019,23.51
+"2580","Haiti","HTI",2019,54.64
+"2610","Honduras","HND",2019,1.01
+"2640","Hungary","HUN",2019,0.28
+"2670","Iceland","ISL",2019,0.24
+"2700","India","IND",2019,3.26
+"2730","Indonesia","IDN",2019,2.11
+"2760","Iran","IRN",2019,1.26
+"2790","Iraq","IRQ",2019,0.19
+"2820","Ireland","IRL",2019,0.16
+"2850","Israel","ISR",2019,0.38
+"2880","Italy","ITA",2019,0.77
+"2910","Jamaica","JAM",2019,14.08
+"2940","Japan","JPN",2019,0.09
+"2970","Jordan","JOR",2019,0.25
+"3000","Kazakhstan","KAZ",2019,1.28
+"3030","Kenya","KEN",2019,133.48
+"3060","Kiribati","KIR",2019,1.29
+"3090","Kuwait","KWT",2019,0.06
+"3120","Kyrgyzstan","KGZ",2019,2.65
+"3150","Laos","LAO",2019,5.65
+"3180","Latin America & Caribbean (WB)","",2019,6.4
+"3210","Latvia","LVA",2019,5.55
+"3240","Lebanon","LBN",2019,1.15
+"3270","Lesotho","LSO",2019,581.38
+"3300","Liberia","LBR",2019,43.18
+"3330","Libya","LBY",2019,1.15
+"3360","Lithuania","LTU",2019,1.88
+"3390","Luxembourg","LUX",2019,0.34
+"3420","Madagascar","MDG",2019,12.03
+"3450","Malawi","MWI",2019,111.2
+"3480","Malaysia","MYS",2019,4.9
+"3510","Maldives","MDV",2019,0.17
+"3540","Mali","MLI",2019,31.45
+"3570","Malta","MLT",2019,0.28
+"3600","Marshall Islands","MHL",2019,7.31
+"3630","Mauritania","MRT",2019,0.69
+"3660","Mauritius","MUS",2019,6.05
+"3690","Mexico","MEX",2019,3.85
+"3720","Micronesia (country)","FSM",2019,49.69
+"3750","Middle East & North Africa (WB)","",2019,0.99
+"3780","Moldova","MDA",2019,3.66
+"3810","Monaco","MCO",2019,1.58
+"3840","Mongolia","MNG",2019,0.46
+"3870","Montenegro","MNE",2019,0.23
+"3900","Morocco","MAR",2019,1.36
+"3930","Mozambique","MOZ",2019,292.95
+"3960","Myanmar","MMR",2019,8.38
+"3990","Namibia","NAM",2019,187.83
+"4020","Nauru","NRU",2019,8.82
+"4050","Nepal","NPL",2019,5.13
+"4080","Netherlands","NLD",2019,0.24
+"4110","New Zealand","NZL",2019,0.18
+"4140","Nicaragua","NIC",2019,8.82
+"4170","Niger","NER",2019,10.83
+"4200","Nigeria","NGA",2019,54.11
+"4230","Niue","NIU",2019,8.58
+"4260","North America (WB)","",2019,1.64
+"4290","North Korea","PRK",2019,2.56
+"4320","North Macedonia","MKD",2019,0.1
+"4350","Northern Ireland","",2019,0.36
+"4380","Northern Mariana Islands","MNP",2019,1.32
+"4410","Norway","NOR",2019,0.23
+"4440","OECD Countries","",2019,1.12
+"4470","Oman","OMN",2019,2.24
+"4500","Pakistan","PAK",2019,2.02
+"4530","Palau","PLW",2019,8.22
+"4560","Palestine","PSE",2019,0.29
+"4590","Panama","PAN",2019,12.81
+"4620","Papua New Guinea","PNG",2019,45.23
+"4650","Paraguay","PRY",2019,8.47
+"4680","Peru","PER",2019,7.03
+"4710","Philippines","PHL",2019,4.62
+"4740","Poland","POL",2019,0.3
+"4770","Portugal","PRT",2019,3.66
+"4800","Puerto Rico","PRI",2019,5.45
+"4830","Qatar","QAT",2019,0.14
+"4860","Region of the Americas (WHO)","",2019,4.7
+"4890","Romania","ROU",2019,0.77
+"4920","Russia","RUS",2019,11.39
+"4950","Rwanda","RWA",2019,32.72
+"4980","Saint Kitts and Nevis","KNA",2019,44.59
+"5010","Saint Lucia","LCA",2019,3.53
+"5040","Saint Vincent and the Grenadines","VCT",2019,16.17
+"5070","Samoa","WSM",2019,7.45
+"5100","San Marino","SMR",2019,1.54
+"5130","Sao Tome and Principe","STP",2019,0.16
+"5160","Saudi Arabia","SAU",2019,1.68
+"5190","Scotland","",2019,0.36
+"5220","Senegal","SEN",2019,14.22
+"5250","Serbia","SRB",2019,0.51
+"5280","Seychelles","SYC",2019,3.33
+"5310","Sierra Leone","SLE",2019,44.5
+"5340","Singapore","SGP",2019,0.45
+"5370","Slovakia","SVK",2019,0.07
+"5400","Slovenia","SVN",2019,0.09
+"5430","Solomon Islands","SLB",2019,7.25
+"5460","Somalia","SOM",2019,22.01
+"5490","South Africa","ZAF",2019,250.91
+"5520","South Asia (WB)","",2019,2.82
+"5550","South Korea","KOR",2019,0.18
+"5580","S. Sudan","SSD",2019,65
+"5610","South-East Asia Region (WHO)","",2019,3.7
+"5640","Spain","ESP",2019,1.09
+"5670","Sri Lanka","LKA",2019,0.17
+"5700","Sub-Saharan Africa (WB)","",2019,77.28
+"5730","Sudan","SDN",2019,16.08
+"5760","Suriname","SUR",2019,16.55
+"5790","Sweden","SWE",2019,0.17
+"5820","Switzerland","CHE",2019,0.34
+"5850","Syria","SYR",2019,0.11
+"5880","Taiwan","TWN",2019,0.57
+"5910","Tajikistan","TJK",2019,0.67
+"5940","Tanzania","TZA",2019,65.29
+"5970","Thailand","THA",2019,19.33
+"6000","Togo","TGO",2019,54.75
+"6030","Tokelau","TKL",2019,8.92
+"6060","Tonga","TON",2019,2.04
+"6090","Trinidad and Tobago","TTO",2019,12.9
+"6120","Tunisia","TUN",2019,1.16
+"6150","Turkey","TUR",2019,0.26
+"6180","Turkmenistan","TKM",2019,1.96
+"6210","Tuvalu","TUV",2019,8.66
+"6240","Uganda","UGA",2019,72.63
+"6270","Ukraine","UKR",2019,12.63
+"6300","United Arab Emirates","ARE",2019,4.32
+"6330","United Kingdom","GBR",2019,0.3
+"6360","United States of America","USA",2019,1.77
+"6390","United States Virgin Islands","VIR",2019,6.46
+"6420","Uruguay","URY",2019,4.51
+"6450","Uzbekistan","UZB",2019,1.67
+"6480","Vanuatu","VUT",2019,7.77
+"6510","Venezuela","VEN",2019,6.08
+"6540","Vietnam","VNM",2019,5.6
+"6570","Wales","",2019,0.35
+"6600","Western Pacific Region (WHO)","",2019,2.26
+"6630","World","OWID_WRL",2019,10.72
+"6660","World Bank High Income","",2019,0.94
+"6690","World Bank Low Income","",2019,45.12
+"6720","World Bank Lower Middle Income","",2019,10.91
+"6750","World Bank Upper Middle Income","",2019,8.57
+"6780","Yemen","YEM",2019,1.24
+"6810","Zambia","ZMB",2019,164.92
+"6840","Zimbabwe","ZWE",2019,180.62
